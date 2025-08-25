@@ -4,7 +4,7 @@
     <property name="oracle.home" value="C:/Oracle/Middleware/Oracle_Home"/>
     <property name="serverURL" value="http://localhost:7003"/>
     <property name="user" value="weblogic"/>
-    <property name="password" value="redhat@123"/>
+    <property name="password" value="redhat"/>
     <property name="overwrite" value="true"/>
 	
 	
