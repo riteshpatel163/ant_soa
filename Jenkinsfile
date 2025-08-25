@@ -22,7 +22,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'USER_PWD', variable: 'weblogic_pwd')]) {
                     bat """
-                    cd /d "%WORKSPACE%\\SOA\\deploy" 
+                    cd /d "\"${env.SOA_ANT_HOME}\" 
                     ant -f build.xml deploy-all -DUSER_PWD=${weblogic_pwd}
                     """
                 }
