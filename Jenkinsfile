@@ -10,7 +10,7 @@ pipeline {
             steps {
                 bat 'ant -version'
                 bat 'java -version'
-                bat "cd /d '${env.SOA_ANT_HOME}' && ant -f build.xml package-all"
+                bat "cd /d \"${env.SOA_ANT_HOME}\" && ant -f build.xml package-all"
             }
         }
         stage('Archive Artifacts') {
