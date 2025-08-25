@@ -3,8 +3,9 @@ pipeline {
 
     stages {
         stage('Package SOA Composites') {
+            
             steps {
-                bat 'ant --version'
+                bat 'ant -version'
                 bat 'java -version'
                 bat 'ant -f build.xml package-all'
             }
