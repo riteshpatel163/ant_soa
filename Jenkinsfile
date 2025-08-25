@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'windows-soa' }
     environment {
-        SOA_ANT_HOME='C:\Oracle\Middleware\Oracle_Home\soa\bin'
+        SOA_ANT_HOME='C:/Oracle/Middleware/Oracle_Home/soa/bin'
     }
 
     stages {
