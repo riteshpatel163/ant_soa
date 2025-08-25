@@ -1,5 +1,8 @@
 pipeline {
     agent { label 'windows-soa' }
+    environment {
+        SOA_ANT_HOME='C:\Oracle\Middleware\Oracle_Home\soa\bin'
+    }
 
     stages {
         stage('Package SOA Composites') {
@@ -7,6 +10,7 @@ pipeline {
             steps {
                 bat 'ant -version'
                 bat 'java -version'
+                bat "cd ${env.SOA_ANT_HOME}"
                 bat 'ant -f build.xml package-all'
             }
         }
