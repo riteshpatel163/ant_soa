@@ -18,6 +18,7 @@ pipeline {
         }
         stage('sonar analysis'){
             steps{
+                withCredentials([string(credentialsId: 'sonar', variable: 'SONAR_TOKEN')]){
                 sh """
                 ${SONAR_SCANNER_HOME}/bin/sonar-scanner \
                     -Dsonar.projectKey=soa-factorial \
