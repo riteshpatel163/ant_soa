@@ -2,7 +2,7 @@
 
     <!-- Common Properties -->
     <property name="oracle.home" value="C:/Oracle/Middleware/Oracle_Home"/>
-    <property name="serverURL" value="http://localhost:7003"/>
+    <property name="serverURL" value="http://localhost:7001"/>
     <property name="user" value="weblogic"/>
     <property name="USER_PWD" />
     <property name="overwrite" value="true"/>
