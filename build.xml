@@ -1,0 +1,52 @@
+<project name="MultiCompositeBuildDeploy" default="package-all" basedir=".">
+
+    <!-- Common Properties -->
+    <property name="oracle.home" value="C:/Oracle/Middleware/Oracle_Home"/>
+    <property name="serverURL" value="http://localhost:7003"/>
+    <property name="user" value="weblogic"/>
+    <property name="password" value="redhat@123"/>
+    <property name="overwrite" value="true"/>
+	
+	
+	<!-- package FACTORIAL SERVICE -->
+	<target name="package-factorial">
+        <property name="compositeName" value="factorial"/>
+        <property name="compositeDir" value="C:/Users/kumar/Downloads/factorial/SOA"/>
+        <property name="revision" value="1.0"/>
+        <property name="sarLocation" value="${compositeDir}/deploy/sca_${compositeName}_rev${revision}.jar"/>
+
+        <echo message="Packaging ${compositeName} from ${compositeDir}..."/>
+        <ant antfile="${oracle.home}/soa/bin/ant-sca-package.xml">
+            <property name="oracle.home" value="${oracle.home}"/>
+            <property name="compositeName" value="${compositeName}"/>
+            <property name="compositeDir" value="${compositeDir}"/>
+            <property name="revision" value="${revision}"/>
+        </ant>
+    </target>
+
+    <!--- demo FACTORIAL DEPLOY ONLY -->
+	<target name="factorial-service" depends="package-factorial">
+        <property name="compositeName" value="factorial"/>
+        <property name="compositeDir" value="C:/Users/kumar/Downloads/factorial/SOA"/>
+        <property name="revision" value="1.0"/>
+        <property name="sarLocation" value="${compositeDir}/deploy/sca_${compositeName}_rev${revision}.jar"/>
+
+        <echo message="Deploying ${compositeName} to ${serverURL}..."/>
+        <ant antfile="${oracle.home}/soa/bin/ant-sca-deploy.xml">
+            <property name="oracle.home" value="${oracle.home}"/>
+            <property name="sarLocation" value="${sarLocation}"/>
+            <property name="serverURL" value="${serverURL}"/>
+            <property name="user" value="${user}"/>
+            <property name="password" value="${password}"/>
+            <property name="overwrite" value="${overwrite}"/>
+        </ant>
+    </target>
+
+
+    <!-- ===== ALL PACKAGE ===== -->
+    <target name="package-all" depends="package-factorial"/>
+
+    <!-- ===== ALL DEPLOY ===== -->
+    <target name="deploy-all" depends="factorial-service"/>
+
+</project>
