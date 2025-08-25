@@ -24,6 +24,7 @@ pipeline {
                     bat """
                     cd /d "\"${env.SOA_ANT_HOME}\" 
                     ant -f build.xml deploy-all -DserverURL=http://localhost:7001 -DUSER_PWD=${weblogic_pwd}
+                    ant -f ant-sca-mgmt.xml listCompositesInPartition -Dpartition=default
                     """
                 }
             }
