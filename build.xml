@@ -4,7 +4,7 @@
     <property name="oracle.home" value="C:/Oracle/Middleware/Oracle_Home"/>
     <property name="serverURL" value="http://localhost:7003"/>
     <property name="user" value="weblogic"/>
-    <property name="password" value="redhat"/>
+    <property name="USER_PWD" />
     <property name="overwrite" value="true"/>
 	
 	
@@ -37,7 +37,7 @@
             <property name="sarLocation" value="${sarLocation}"/>
             <property name="serverURL" value="${serverURL}"/>
             <property name="user" value="${user}"/>
-            <property name="password" value="${password}"/>
+            <property name="password" value="${USER_PWD}"/>
             <property name="overwrite" value="${overwrite}"/>
         </ant>
     </target>
