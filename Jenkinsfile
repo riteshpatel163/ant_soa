@@ -1,10 +1,10 @@
 pipeline {
     agent { label 'windows-soa' }
-    environment {
-        ORACLE_HOME = 'C:\Oracle\Middleware\Oracle_Home'
-        PATH = "${env.PATH};${env.ORACLE_HOME}/soa/bin"
+    //environment {
+        //ORACLE_HOME = 'C:\Oracle\Middleware\Oracle_Home'
+        //PATH = "${env.PATH};${env.ORACLE_HOME}/soa/bin"
 
-    }
+    }//
     stages {
         stage('Package SOA Composites') {
             steps {
