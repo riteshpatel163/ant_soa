@@ -10,7 +10,7 @@ pipeline {
             steps {
                 bat 'ant -version'
                 bat 'java -version'
-                bat "cd ${env.SOA_ANT_HOME}"
+                bat "cd /d "${env.SOA_ANT_HOME}"
                 bat 'ant -f build.xml package-all'
             }
         }
